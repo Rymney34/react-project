@@ -17,15 +17,30 @@ class EmployeesAddForm extends Component {
         })
 
     }
+
+    
 // Passing data to onAdd to the array when button add is pressed 
      onSubmit = (e) => {
         e.preventDefault();
         const {name, salary} = this.state;
-        this.props.onAdd(name, salary);
+        if (!name.trim() || !salary.trim()){
+            alert("Pleease fill two inputs (fields)")
+        }
+        else if(name.length < 3  || salary.length < 3) {
+             alert("Inputs should be more then 3 char")
+        }
+        else{
+             this.props.onAdd(name, salary);
+        }
+       
     }
+    
    
+
    render () {
     const {name, salary} = this.state
+
+   
     
 
      return (
