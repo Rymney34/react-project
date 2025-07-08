@@ -3,14 +3,13 @@ import {Component} from 'react'
 
 
 class EmployeesAddForm extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            name: '',
-            salary: ''
-        }
+    
+        
+    state = {
+        name: '',
+        salary: ''
     }
-
+   
     onValueChannge = (e) => {
         this.setState ({
         [e.target.name] : e.target.value
@@ -35,6 +34,11 @@ class EmployeesAddForm extends Component {
        
     }
     
+    static onLog = () => {
+        console.log('Gazoz')
+    }
+
+    static logged = 'on'
    
 
    render () {
@@ -60,5 +64,9 @@ class EmployeesAddForm extends Component {
     )
    }
 }
+
+EmployeesAddForm.onLog()
+
+console.log(EmployeesAddForm.logged);
 
 export default EmployeesAddForm
